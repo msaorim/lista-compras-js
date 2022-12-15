@@ -15,6 +15,13 @@ let bd = [
     }
 ];
 
+const clear = () => {
+    const lista = document.getElementById('lista');
+    while (lista.firstChild) {
+        lista.removeChild(lista.lastChild);
+    }
+}
+
 
 const montarItem = (descricao, comprado) => {
     const item = document.createElement('label');
@@ -27,8 +34,26 @@ const montarItem = (descricao, comprado) => {
     document.getElementById('lista').appendChild(item);
 }
 
+const addItem = (e) => {
+    const key = e.key;
+    const text = e.target.value;
+    if (key === 'Enter' && text != '') {
+        bd.push(
+            {
+                'descricao': text,
+                'comprado': ''
+            }
+        );
+        render();
+        e.target.value = '';
+    }
+}
+
 const render = () => {
+    clear();
     bd.forEach(item => montarItem(item.descricao, item.comprado));
 }
+
+document.getElementById('novoItem').addEventListener('keypress', addItem);
 
 render();

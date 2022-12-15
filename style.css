@@ -94,3 +94,30 @@ body {
     font-style: italic;
     color: rgb(232, 141, 76);
 }
+
+.novo_item {
+    display: flex;
+    background-color: #8dd086;
+    width: 90%;
+    height: 50px;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+    margin: 10px auto;
+    font: inherit;
+}
+
+.novo_item>input {
+    background-color: #8dd086;
+    border: none;
+    width: 80%;
+    outline: none;
+    font: inherit;
+}
+
+.novo_item>input::placeholder {
+    text-align: center;
+    font-size: .8em;
+    font-style: italic;
+    font-weight: normal;
+}
