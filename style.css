@@ -1,6 +1,96 @@
+:root {
+    --blue: rgb(14, 6, 28);
+    --bege: rgb(137, 230, 140);
+    --verde: rgb(9, 119, 51);
+    --verde900: rgb(8, 58, 27);
+}
+
 * {
     margin: 0;
     padding: 0;
-    background-color: rgb(14, 6, 28);
-    color: bisque;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 63%;
+}
+
+body {
+    background-color: var(--blue);
+    color: var(--bege);
+    font: bold 1.8rem 'Open Sans', sans-serif;
+}
+
+.titulo {
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px var(--bege);
+    border-radius: 10px;
+    background-color: var(--bege);
+    color: var(--blue);
+    width: 90%;
+    height: 80px;
+    margin: 30px auto;
+    font-size: 2.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.assinatura {
+    font-size: 1.5rem;
+}
+
+.lista {
+    display: flex;
+    width: 85vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.item_lista {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: var(--verde);
+    box-shadow: 1px 1px 5px var(--bege);
+    margin: 0 auto;
+    ;
+}
+
+.item_lista>div {
+    width: 80%;
+}
+
+.item_lista:hover {
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: var(--verde900);
+    color: var(--bege);
+}
+
+
+.item_lista>input[type='text'] {
+    border: none;
+    width: 80%;
+    font: inherit;
+}
+
+.item_lista>input[type='button'],
+.item_lista>input[type='checkbox'] {
+    width: 30px;
+    height: 30px;
+    font: inherit;
+}
+
+
+.item_lista>input[type='checkbox']:checked+div {
+    text-decoration: line-through;
+    font-style: italic;
+    color: rgb(232, 141, 76);
 }
